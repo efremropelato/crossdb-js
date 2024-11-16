@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "example": "node example/index.js",
-    "start": "node index.js",
+    "start": "node example/index.js",
     "build:dev": "node-gyp -j 16 build --debug",
     "build": "node-gyp -j 16 build",
     "rebuild:dev": "node-gyp -j 16 rebuild --debug",
