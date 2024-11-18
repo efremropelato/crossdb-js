@@ -1,5 +1,5 @@
 {
-  "name": "@efremropelato/crossdb",
+  "name": "@crossdb/crossdb-nodejs",
   "version": "1.0.0",
   "main": "index.js",
   "gypfile": true,
