@@ -4,8 +4,8 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -28,12 +28,14 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - run: |
-          sudo apt-get -y update
-          sudo apt-get -y install build-essential
-      - run: git clone https://github.com/crossdb-org/crossdb.git
-      - run: cd crossdb
-      - run: make build
-      - run: make install 
+          sudo apt-get -y update 
+          sudo apt-get -y install build-essential software-properties-common gcc gdb make
+      - run:  | 
+            git clone https://github.com/crossdb-org/crossdb.git
+            cd crossdb
+            make build
+            sudo make install
+            cd .. 
       - run: npm ci
       - run: npm run build --if-present
       - run: npm publish
